@@ -1,0 +1,40 @@
+#!/bin/bash
+clear
+figlet IPINFO 
+PS3="Enter Your Choice:"
+router_ip=$(ip route | grep 'via '| awk '{print $3}')
+pub_ip=$(curl -s api.ipify.org)
+mapfile -t inter_array < <(ip addr | grep "$i: " | awk '{print $2}')
+inter_array+=("Quit")
+output(){
+  echo -e "\e[0;32m Public IP :\e[0;33m $pub_ip\e[0;0m"
+  echo -e "\e[0;32m Private IP : \e[0;33m $priv_ip \e[0;0m"
+  echo -e "\e[0;32m Gateway IP : \e[0;33m $router_ip \e[0;0m"
+}
+interface(){
+  for((i=0;i < ${#inter_array[@]};i++))
+    do
+      select option in "${inter_array[@],'Quit'}"
+      do
+        if [ "$option" == 'Quit' ];then
+          exit 0
+        elif [ "$REPLY" == 1 ] || [ "$REPLY" == 2 ] || [ "$REPLY" == 3 ];then
+          option=$(echo "$option" | tr -d ":")
+          priv_ip=$(ifconfig $option | grep "inet " | awk '{print $2}' )
+          if [ -z $priv_ip ];then
+            echo -e "\e[0;34mNo Network connected on \e[0;31m $option \e[0;0m"
+          elif [ $priv_ip == "127.0.0.1" ];then
+            echo "This is localhost"
+          else
+            echo $priv_ip
+            output
+          fi
+        else 
+          echo -e "\e[0;31m Invalid Option\e[0;0m"
+        fi
+      done
+    done
+}
+interface
+
+
