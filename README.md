@@ -24,4 +24,6 @@ To find the router IP address, you can typically check the default gateway using
 
 ```bash
 # Retrieve public IP address
+git clone https://github.com/prashik287/ipinfo-
+cd ipinfo-
 ./ipinfo
