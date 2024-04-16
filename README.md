@@ -1,6 +1,6 @@
 # System IP Information
 
-This repository provides information about the current system's public IP address, private IP address, and the IP address of the router it's connected to.
+This tool provides information about the current system's public IP address, private IP address, and the IP address of the router it's connected to. and based on differetnt interface
 
 ## Public IP Address
 
