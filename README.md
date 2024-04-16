@@ -24,16 +24,4 @@ To find the router IP address, you can typically check the default gateway using
 
 ```bash
 # Retrieve public IP address
-curl ifconfig.io
-
-# Retrieve private IP address (Linux)
-ifconfig
-
-# Retrieve private IP address (Windows)
-ipconfig
-
-# Retrieve router IP address (Linux)
-route -n
-
-# Retrieve router IP address (Windows)
-ipconfig /all
+./ipinfo
