@@ -1,4 +1,4 @@
-<h1 align="center">🖥️ System IP Information</h1>
+<h1 align="center">🖥️ IPINFO</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/build-alpha-blueviolet?style=for-the-badge" />
@@ -12,7 +12,7 @@
 
 ## 📡 Overview of the Project
 
-The System IP Information tool is designed to help users easily retrieve and display their network-related IP addresses. It provides information about:
+The IPINFO script is designed to help users easily retrieve and display their network-related IP addresses. It provides information about:
 
 - **Public IP Address**: The IP address assigned to the system by the Internet Service Provider (ISP).
 - **Private IP Address**: The IP address assigned to the system within a local network.
