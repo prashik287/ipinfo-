@@ -59,7 +59,7 @@ cd system-ip-information
 
 # Install dependencies (if any)
 # For example, if using Python:
-pip install -r requirements.txt
+mv ipinfo /usr/bin/
 
-# Run the application
-python app.py
+# Run the script
+ipinfo
